@@ -1,0 +1,20 @@
+<h1><%= @article.title %></h1>
+<p><%= @description %></p>
+<p><strong>Author Name:</strong> <%= @article.author.name %></p>
+<p><strong>Author ID:</strong> <%= @article.author.id %></p>
+<p><strong>Publisher:</strong> <%= @article.publisher.name %></p>
+
+
+<% if @article.image_url.present? %>
+  <h2>Image</h2>
+  <img src="<%= @article.image_url %>" alt="Article Image">
+<% else %>
+  <p>No image available for this article</p> 
+<% end %>
+
+<% if @article.video_url.present? %>
+    <h2>Video Link</h2>
+    <p><%= link_to "Watch Video", @article.video_url %></p>
+  <% else %>
+  <p>No video available for this article</p> 
+  <% end %>
